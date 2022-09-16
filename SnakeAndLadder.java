@@ -8,7 +8,7 @@ public class SnakeAndLadder {
         SnakeAndLadder Player1 = new SnakeAndLadder();
         System.out.println(Player1);
 
-        public int rollDie () {
+        public int rollDie() {
             Random rand = new Random();
             int diceRoll = rand.nextInt(6) + 1;
             return diceRoll;
