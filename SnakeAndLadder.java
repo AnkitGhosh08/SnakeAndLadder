@@ -2,22 +2,21 @@ package com.codinclub;
 
 import java.util.Random;
 
-public class SnakeAndLadder {
-    public static int main(String[] args)
+public class SnakeAndLadder
+{
+    public static void main(String[] args)
     {
         int playerPosition = 0;
-        SnakeAndLadder Player1 = new SnakeAndLadder();
-        System.out.println(Player1);
-
-        public int rollDie()
-    {
-            Random rand = new Random();
-            int diceRoll = rand.nextInt(6) + 1;
-            return diceRoll;
-        }
+        int diceNumber;
+        System.out.println("position of player is : " + playerPosition);
+        diceNumber = RandomDieNUmber();
+        System.out.println("you got : " + diceNumber);
+    }
+    private static int RandomDieNUmber() {
+        int RandomValue = (int) Math.floor((Math.random() * 6) + 1);
+        return RandomValue;
     }
 }
-
 
 
 
