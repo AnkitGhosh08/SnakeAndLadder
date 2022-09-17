@@ -12,6 +12,7 @@ public class SnakeAndLadder {
 
     public static void main(String[] args) {
         int playerPosition = 0;
+        int count=0;
         System.out.println("position of player is : " + playerPosition);
 
         while (playerPosition < 100 ){
@@ -19,22 +20,24 @@ public class SnakeAndLadder {
             System.out.println("you got : " + dieNumber);
 
             int option = RandomOption();
-            System.out.println("current position" + option);
 
             switch (option) {
                 case LADDER:
-                    if(playerPosition>100)
-                        playerPosition=100;
-                    playerPosition = playerPosition + dieNumber;
-                    playerPosition =playerPosition - dieNumber;
-                    System.out.println( "Ladder :"+ LADDER );
-                    System.out.println("hurry ! you won the game");
-                    break;
+                    if(playerPosition>100) {
+                        playerPosition = 100;
+                        playerPosition = playerPosition + dieNumber;
+                        playerPosition = playerPosition - dieNumber;
+                        System.out.println("Ladder :" + LADDER);
+                        System.out.println("hurry ! you won the game");
+                    }
+                    count++;
+                         break;
+
                 case SNAKE:
-                    if(playerPosition<0)
-                        playerPosition=0;
-                    playerPosition = playerPosition - dieNumber;
-                    System.out.println( "Snake :" + SNAKE );
+                    if(playerPosition<0) {
+                        playerPosition = playerPosition - dieNumber;
+                        System.out.println("Snake :" + SNAKE);
+                    }
                     break;
                 default:
                     System.out.println("No play");
@@ -42,6 +45,7 @@ public class SnakeAndLadder {
             System.out.println( " current position of player :" +playerPosition );
         }
         System.out.println("congrats you win");
+        System.out.println("roll the dice " +count);
     }
     public static int RandomOption() {
         int RandomOption = (int) Math.floor((Math.random() * 3));
