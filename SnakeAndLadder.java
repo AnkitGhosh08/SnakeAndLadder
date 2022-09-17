@@ -8,22 +8,27 @@ public class SnakeAndLadder {
     public static final int LADDER = 2;
     public static final int SNAKE = 3;
 
+    public static final int WinningPosition = 100;
+
     public static void main(String[] args) {
         int playerPosition = 0;
         System.out.println("position of player is : " + playerPosition);
 
-        while (playerPosition < 100) {
+        while (playerPosition < 100 ){
             int dieNumber = RandomDieValue();
             System.out.println("you got : " + dieNumber);
 
             int option = RandomOption();
+            System.out.println("current position" + option);
 
             switch (option) {
                 case LADDER:
                     if(playerPosition>100)
                         playerPosition=100;
                     playerPosition = playerPosition + dieNumber;
+                    playerPosition =playerPosition - dieNumber;
                     System.out.println( "Ladder :"+ LADDER );
+                    System.out.println("hurry ! you won the game");
                     break;
                 case SNAKE:
                     if(playerPosition<0)
